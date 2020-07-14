@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../Model/Anchorage.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:../Model/Phoenix.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:../Model/Portland.jpeg">
+   </FileRef>
+   <FileRef
+      location = "group:../Model/SanFrancisco.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:../Model/NewYork.jpg">
+   </FileRef>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
