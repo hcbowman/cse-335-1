@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554E9F5B24C3A7540034D720 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E9F5924C3A7540034D720 /* City+CoreDataClass.swift */; };
+		554E9F5C24C3A7540034D720 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E9F5A24C3A7540034D720 /* City+CoreDataProperties.swift */; };
+		5575158924C0E56D0081E5DC /* hw2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5575158724C0E56D0081E5DC /* hw2.xcdatamodeld */; };
 		558DA9B02408A453002B8214 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9AF2408A453002B8214 /* TableViewController.swift */; };
 		558DA9B22408A704002B8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9B12408A704002B8214 /* DetailViewController.swift */; };
 		558DA9B42408A9F8002B8214 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9B32408A9F8002B8214 /* CityTableViewCell.swift */; };
-		558DA9BF2408DC0B002B8214 /* SanFrancisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 558DA9BB2408DC0A002B8214 /* SanFrancisco.jpg */; };
-		558DA9C02408DC0B002B8214 /* Portland.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 558DA9BC2408DC0A002B8214 /* Portland.jpeg */; };
-		558DA9C12408DC0B002B8214 /* NewYork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 558DA9BD2408DC0A002B8214 /* NewYork.jpg */; };
-		558DA9C22408DC0B002B8214 /* Phoenix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 558DA9BE2408DC0B002B8214 /* Phoenix.jpg */; };
-		558DA9C42408DC18002B8214 /* Anchorage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 558DA9C32408DC18002B8214 /* Anchorage.jpg */; };
 		55AB09C2240898270016EE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB09C1240898270016EE05 /* AppDelegate.swift */; };
 		55AB09C4240898270016EE05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB09C3240898270016EE05 /* SceneDelegate.swift */; };
 		55AB09C9240898270016EE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AB09C7240898270016EE05 /* Main.storyboard */; };
@@ -25,14 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		554E9F5924C3A7540034D720 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		554E9F5A24C3A7540034D720 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5575158824C0E56D0081E5DC /* hw2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hw2.xcdatamodel; sourceTree = "<group>"; };
 		558DA9AF2408A453002B8214 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		558DA9B12408A704002B8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		558DA9B32408A9F8002B8214 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
-		558DA9BB2408DC0A002B8214 /* SanFrancisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = SanFrancisco.jpg; path = Model/SanFrancisco.jpg; sourceTree = SOURCE_ROOT; };
-		558DA9BC2408DC0A002B8214 /* Portland.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Portland.jpeg; path = Model/Portland.jpeg; sourceTree = SOURCE_ROOT; };
-		558DA9BD2408DC0A002B8214 /* NewYork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewYork.jpg; path = Model/NewYork.jpg; sourceTree = SOURCE_ROOT; };
-		558DA9BE2408DC0B002B8214 /* Phoenix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Phoenix.jpg; path = Model/Phoenix.jpg; sourceTree = SOURCE_ROOT; };
-		558DA9C32408DC18002B8214 /* Anchorage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Anchorage.jpg; path = Model/Anchorage.jpg; sourceTree = SOURCE_ROOT; };
 		55AB09BE240898270016EE05 /* hw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AB09C1240898270016EE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55AB09C3240898270016EE05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +71,6 @@
 		55AB09C0240898270016EE05 /* hw2 */ = {
 			isa = PBXGroup;
 			children = (
-				558DA9C32408DC18002B8214 /* Anchorage.jpg */,
-				558DA9BD2408DC0A002B8214 /* NewYork.jpg */,
-				558DA9BE2408DC0B002B8214 /* Phoenix.jpg */,
-				558DA9BC2408DC0A002B8214 /* Portland.jpeg */,
-				558DA9BB2408DC0A002B8214 /* SanFrancisco.jpg */,
 				55AB09C1240898270016EE05 /* AppDelegate.swift */,
 				55AB09C3240898270016EE05 /* SceneDelegate.swift */,
 				558DA9AF2408A453002B8214 /* TableViewController.swift */,
@@ -96,6 +87,9 @@
 		55AB09D5240898A70016EE05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				554E9F5924C3A7540034D720 /* City+CoreDataClass.swift */,
+				554E9F5A24C3A7540034D720 /* City+CoreDataProperties.swift */,
+				5575158724C0E56D0081E5DC /* hw2.xcdatamodeld */,
 				55AB09DA240899440016EE05 /* City.swift */,
 				55AB09DC240899500016EE05 /* Cities.swift */,
 			);
@@ -161,13 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AB09CE240898340016EE05 /* LaunchScreen.storyboard in Resources */,
-				558DA9BF2408DC0B002B8214 /* SanFrancisco.jpg in Resources */,
 				55AB09CB240898340016EE05 /* Assets.xcassets in Resources */,
-				558DA9C22408DC0B002B8214 /* Phoenix.jpg in Resources */,
-				558DA9C42408DC18002B8214 /* Anchorage.jpg in Resources */,
-				558DA9C12408DC0B002B8214 /* NewYork.jpg in Resources */,
 				55AB09C9240898270016EE05 /* Main.storyboard in Resources */,
-				558DA9C02408DC0B002B8214 /* Portland.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554E9F5C24C3A7540034D720 /* City+CoreDataProperties.swift in Sources */,
+				554E9F5B24C3A7540034D720 /* City+CoreDataClass.swift in Sources */,
 				55AB09DD240899500016EE05 /* Cities.swift in Sources */,
+				5575158924C0E56D0081E5DC /* hw2.xcdatamodeld in Sources */,
 				558DA9B42408A9F8002B8214 /* CityTableViewCell.swift in Sources */,
 				55AB09C2240898270016EE05 /* AppDelegate.swift in Sources */,
 				55AB09DB240899440016EE05 /* City.swift in Sources */,
@@ -382,6 +374,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5575158724C0E56D0081E5DC /* hw2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5575158824C0E56D0081E5DC /* hw2.xcdatamodel */,
+			);
+			currentVersion = 5575158824C0E56D0081E5DC /* hw2.xcdatamodel */;
+			path = hw2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 55AB09B6240898270016EE05 /* Project object */;
 }
