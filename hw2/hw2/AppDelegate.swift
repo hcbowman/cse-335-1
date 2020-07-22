@@ -6,6 +6,7 @@
 //  Copyright © 2020 Hunter Bowman. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 @UIApplicationMain
@@ -56,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
     
-    var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the

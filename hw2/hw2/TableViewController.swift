@@ -10,14 +10,20 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     //Model
-    var citiesList: Cities = Cities()
+    //var citiesList: Cities = Cities()
+    var cities:[City]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        fetchItems()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,53 +41,87 @@ class TableViewController: UITableViewController {
     }
     */
     
+    func fetchItems() {
+        
+        do {
+            // Fetches all data from Core Data
+            cities.self = try context.fetch(City.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        catch {
+            
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return citiesList.getNumOfSections()
+        
+        //return citiesList.getNumOfSections()
+        
+        // TODO: Return the number of sections of cities, grouped by first letter of name
+        //return cities?.count ?? 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        // Return the number of rows
-        return citiesList.getNumOfRowsInSection(section: section)
+        // TODO: The number of cities that would fall in a particular section
+        //return citiesList.getNumOfRowsInSection(section: section)
+        return cities?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.text = citiesList.getKey(section: section)
-        label.backgroundColor = UIColor.systemIndigo
-        return label
-    }
+    
+    // TODO: Get the title for the particular section
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let label = UILabel()
+//        label.text = citiesList.getKey(section: section)
+//        label.backgroundColor = UIColor.systemIndigo
+//        return label
+//    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? CityTableViewCell ?? CityTableViewCell(style: .default, reuseIdentifier: "cityCell")
         
         cell.layer.borderWidth = 1.0
         
-        let sectionLetter = citiesList.getKeys()[indexPath.section]
+        // TODO: Add functionality for the tableView sections
+        // Gets the information needed to find the section of the city, in the model
+        //let sectionLetter = citiesList.getKeys()[indexPath.section]
         
-        // Get city items from model
-        //let cityItem = citiesList.getCity(i:indexPath.row)
+        // Gets the section, in the model, that the city was placed in
+        //let citValues = citiesList.getCities(section: sectionLetter)
         
-        let citValues = citiesList.getCities(section: sectionLetter)
-        let cityItem = citValues[indexPath.row]
+        // Gets the city object from the model so its' data can be parsed for the new cell
+        //let cityItem = citValues[indexPath.row]
         
-        // Pass data variables of the city item to the cell
-        cell.cityTitle.text = cityItem.getName()
-        cell.cityDescription.text = cityItem.getDescription()
-        cell.cityImage.image = UIImage(named: cityItem.getImageName())
         
+        /// Get city object from model
+        // FIXME: Get rid of the force unwrap
+        let city = cities![indexPath.row]
+        //guard let cityItem = cities[indexPath.row] else { return }
+        
+        
+        /// Pass data variables of the city item to the cell
+        cell.cityTitle.text = city.name
+        cell.cityDescription.text = city.description
+        // FIXME: Fix the shoddy coalescing
+        cell.cityImage.image = UIImage(named: city.image ?? "Anchorage")
 
         return cell
     }
     
-    //override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //    return "Section \(section)"
-    //}
+    /*
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return citiesList.getKeys()
     }
+     */
 
     
     // Override to support conditional editing of the table view.
@@ -100,7 +140,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            citiesList.deleteCity(i: indexPath.row)
+            //citiesList.deleteCity(i: indexPath.row)
+            cities?.remove(at: indexPath.row)
             
             // Delete the row from the data source
             tableView.beginUpdates()
@@ -108,7 +149,8 @@ class TableViewController: UITableViewController {
             tableView.endUpdates()
             
         } else if editingStyle == .insert {
-            // #TODO:Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // TODO: Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            
         }    
     }
     
@@ -129,8 +171,14 @@ class TableViewController: UITableViewController {
                 print("city name: \(name)")
                 
                // let f4 = fruit(fn: name, fd: "Healthy", fin: "banana.jpg")
+                let city = City()
+                city.name = name
+                city.image = "city.jpg"
+                city.info = "It's fun"
+                city.visited = false
                 
-                self.citiesList.addCity(nme: name, imgNme: "city.jpg", desc: "It's fun")
+                //self.citiesList.addCity(nme: name, imgNme: "city.jpg", desc: "It's fun")
+                self.cities!.append(city)
                 
                 //Method 1
                /*
@@ -176,12 +224,15 @@ class TableViewController: UITableViewController {
         
         let selectedIndex: IndexPath = tableView.indexPath(for: sender as! UITableViewCell)!
         
-        let city = citiesList.getCity(i: selectedIndex.row)
+        
+        // FIXME: Change the force unwrap
+        //let city = citiesList.getCity(i: selectedIndex.row)
+        let city = cities![selectedIndex.row]
         
         // Get the new view controller using segue.destination.
         if (segue.identifier == "detailView") {
             if let viewController: DetailViewController = segue.destination as? DetailViewController {
-                viewController.selectedCity = city.getName()
+                viewController.selectedCity = city.name
             }
             
         }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		554E9F5B24C3A7540034D720 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E9F5924C3A7540034D720 /* City+CoreDataClass.swift */; };
 		554E9F5C24C3A7540034D720 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E9F5A24C3A7540034D720 /* City+CoreDataProperties.swift */; };
-		5575158924C0E56D0081E5DC /* hw2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5575158724C0E56D0081E5DC /* hw2.xcdatamodeld */; };
 		558DA9B02408A453002B8214 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9AF2408A453002B8214 /* TableViewController.swift */; };
 		558DA9B22408A704002B8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9B12408A704002B8214 /* DetailViewController.swift */; };
 		558DA9B42408A9F8002B8214 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558DA9B32408A9F8002B8214 /* CityTableViewCell.swift */; };
@@ -18,8 +17,6 @@
 		55AB09C9240898270016EE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AB09C7240898270016EE05 /* Main.storyboard */; };
 		55AB09CB240898340016EE05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AB09CA240898340016EE05 /* Assets.xcassets */; };
 		55AB09CE240898340016EE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AB09CC240898340016EE05 /* LaunchScreen.storyboard */; };
-		55AB09DB240899440016EE05 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB09DA240899440016EE05 /* City.swift */; };
-		55AB09DD240899500016EE05 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB09DC240899500016EE05 /* Cities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,11 +166,8 @@
 			files = (
 				554E9F5C24C3A7540034D720 /* City+CoreDataProperties.swift in Sources */,
 				554E9F5B24C3A7540034D720 /* City+CoreDataClass.swift in Sources */,
-				55AB09DD240899500016EE05 /* Cities.swift in Sources */,
-				5575158924C0E56D0081E5DC /* hw2.xcdatamodeld in Sources */,
 				558DA9B42408A9F8002B8214 /* CityTableViewCell.swift in Sources */,
 				55AB09C2240898270016EE05 /* AppDelegate.swift in Sources */,
-				55AB09DB240899440016EE05 /* City.swift in Sources */,
 				558DA9B22408A704002B8214 /* DetailViewController.swift in Sources */,
 				558DA9B02408A453002B8214 /* TableViewController.swift in Sources */,
 				55AB09C4240898270016EE05 /* SceneDelegate.swift in Sources */,
@@ -252,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -306,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
