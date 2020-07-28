@@ -5,12 +5,23 @@
 //  Created by Hunter Bowman on 2/27/20.
 //  Copyright © 2020 Hunter Bowman. All rights reserved.
 //
+//
+//cities.append(City(name: "Phoenix, AZ", imageName: "Phoenix.jpg", description: "Hot"))
+//cities.append(City(name: "New York", imageName: "NewYork.jpg", description: "Too many people"))
+//cities.append(City(name: "San Francisco", imageName: "SanFrancisco.jpg", description: "Silicon Valley"))
+//cities.append(City(name: "Portland", imageName: "Portland.jpeg", description: "Weird"))
+//cities.append(City(name: "Anchorage", imageName: "Anchorage.jpg", description: "Cold"))
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var container: PersistentContainer!
+    var context: NSManagedObjectContext!
+    
+    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     //Model
@@ -20,11 +31,15 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        guard container != nil else {
+            fatalError("This view needs a persistent container.")
+        }
         
+        context = container.viewContext
+        
+        preFillTable()
         fetchItems()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,9 +56,34 @@ class TableViewController: UITableViewController {
     }
     */
     
+    func preFillTable() {
+        
+        let city = City(context: self.context)
+        
+        city.name = "Phoenix, AZ"
+        city.image = "Phoenix.jpg"
+        city.info = "It's hot."
+        city.visited = true
+        
+        // Save the data
+        do {
+            try self.context.save()
+        } catch {
+            
+        }
+        
+    }
+    
     func fetchItems() {
         
         do {
+            
+            let request = City.fetchRequest() as NSFetchRequest<City>
+            
+            // Set the filtering and sorting on the request
+            let predicate = NSPredicate(format: "name CONTAINS[c] 'P'")
+            request.predicate = predicate
+            
             // Fetches all data from Core Data
             cities.self = try context.fetch(City.fetchRequest())
             
@@ -72,17 +112,22 @@ class TableViewController: UITableViewController {
         return cities?.count ?? 0
     }
     
-    
+    /*
     // TODO: Get the title for the particular section
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        label.text = citiesList.getKey(section: section)
-//        label.backgroundColor = UIColor.systemIndigo
-//        return label
-//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = citiesList.getKey(section: section)
+        label.backgroundColor = UIColor.systemIndigo
+        return label
+        
+    }
+     */
 
     
+    
+    /// cellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as? CityTableViewCell ?? CityTableViewCell(style: .default, reuseIdentifier: "cityCell")
         
         cell.layer.borderWidth = 1.0
@@ -106,7 +151,7 @@ class TableViewController: UITableViewController {
         
         /// Pass data variables of the city item to the cell
         cell.cityTitle.text = city.name
-        cell.cityDescription.text = city.description
+        cell.cityDescription.text = city.info
         // FIXME: Fix the shoddy coalescing
         cell.cityImage.image = UIImage(named: city.image ?? "Anchorage")
 
@@ -134,14 +179,33 @@ class TableViewController: UITableViewController {
         return UITableViewCell.EditingStyle.delete
     }
     
-
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             
             //citiesList.deleteCity(i: indexPath.row)
-            cities?.remove(at: indexPath.row)
+            //cities?.remove(at: indexPath.row)
+            
+            // From the 'cities' array, the City to be romved is at the same index as the selected row
+            let cityToRemove = self.cities![indexPath.row]
+            
+            // Remove the city
+            self.context.delete(cityToRemove)
+            
+            // Save the data
+            
+            /*
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+             */
+            
+            // This regenerates the 'cities' array, from Core Data, that had a City removed()
+            self.fetchItems()
             
             // Delete the row from the data source
             tableView.beginUpdates()
@@ -157,45 +221,56 @@ class TableViewController: UITableViewController {
     // Add a City
     @IBAction func addCity(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Add City", message: "hey?", preferredStyle: .alert)
+        /// Create alert
+        let alert = UIAlertController(title: "Add City", message: "What is the city name?", preferredStyle: .alert)
+        
+        // Cancel button
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Enter Name of the City Here"
-        })
+        //alert.addTextField(configurationHandler: { textField in textField.placeholder = "Enter Name of the City Here"})
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            
-            // Do this first, then use method 1 or method 2
-            if let name = alert.textFields?.first?.text {
-                print("city name: \(name)")
+        // Create + configure button handler
+        let submitButton = UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: { (action) in
                 
-               // let f4 = fruit(fn: name, fd: "Healthy", fin: "banana.jpg")
-                let city = City()
-                city.name = name
-                city.image = "city.jpg"
-                city.info = "It's fun"
-                city.visited = false
+                // Do this first, then use method 1 or method 2
+                if let name = alert.textFields?.first?.text {
+                    
+                    print("city name: \(name)")
+                    // let f4 = fruit(fn: name, fd: "Healthy", fin: "banana.jpg")
+                    let city = City(context: self.context)
+                    city.name = name
+                    
+                    // TODO: Add functionality for adding a photo
+                    city.image = "city.jpg"
+                    
+                    // TODO: Add functionality for the discription
+                    city.info = "It's fun"
+                    
+                    // TODO: Add functionality so the user can set if they vistited or not
+                    city.visited = false
+                    
+                    // Save the data
+                    do {
+                        try self.context.save()
+                    } catch {
+                        
+                    }
+                    
+                    // Re-fetch the data
+                    self.fetchItems()
+                    
+                }
                 
-                //self.citiesList.addCity(nme: name, imgNme: "city.jpg", desc: "It's fun")
-                self.cities!.append(city)
-                
-                //Method 1
-               /*
-                let indexPath = IndexPath (row: self.citiesList.getCityCount() - 1, section: 0)
-                self.tableView.beginUpdates()
-                self.tableView.insert
-                self.tableView.insertRows(at: [indexPath], with: .automatic)
-                self.tableView.endUpdates()
- */
-                
-               //Method 2
-                self.tableView.reloadData()
-            }
-        }))
+            })
         
+        // Add button
+        alert.addAction(submitButton)
+        
+        // Show alert
         self.present(alert, animated: true)
-        
         
     }
     
