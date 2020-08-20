@@ -18,11 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
+        /*
         let myNavigationController = application.windows.first?.rootViewController as? UINavigationController
         
         if let rootVC = myNavigationController?.viewControllers.first as? TableViewController {
             rootVC.container = persistentContainer
-        }
+        }*/
         
         /*
         if let rootViewController = window?.rootViewController as? UINavigationController {
@@ -50,7 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    
+    
     // MARK: - Core Data stack
+    /*
     lazy var persistentContainer: PersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -76,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         return container
-    }()
+    }()*/
 
 
 }

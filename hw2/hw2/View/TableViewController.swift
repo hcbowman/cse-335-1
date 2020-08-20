@@ -19,6 +19,7 @@ class TableViewController: UITableViewController {
     
     
     var container: PersistentContainer!
+    var modelController: ModelController
     var context: NSManagedObjectContext!
     
     //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

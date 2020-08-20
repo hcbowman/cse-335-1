@@ -19,6 +19,7 @@
 		554E97EC24C8DBBC00E065F7 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E97E924C8DBBC00E065F7 /* CityTableViewCell.swift */; };
 		554E97ED24C8DBBC00E065F7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E97EA24C8DBBC00E065F7 /* TableViewController.swift */; };
 		554E97F024C8DF6800E065F7 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E97EE24C8DF6800E065F7 /* City+CoreDataClass.swift */; };
+		558067C224E208D600D8FC24 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558067C124E208D600D8FC24 /* ModelController.swift */; };
 		55FBA21924D00E300093FA48 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FBA21824D00E300093FA48 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		554E97E924C8DBBC00E065F7 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		554E97EA24C8DBBC00E065F7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		554E97EE24C8DF6800E065F7 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		558067C124E208D600D8FC24 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		55FBA21824D00E300093FA48 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				554E97EE24C8DF6800E065F7 /* City+CoreDataClass.swift */,
 				554E97BD24C8D97200E065F7 /* hw2.xcdatamodeld */,
 				55FBA21824D00E300093FA48 /* PersistentContainer.swift */,
+				558067C124E208D600D8FC24 /* ModelController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				554E97F024C8DF6800E065F7 /* City+CoreDataClass.swift in Sources */,
 				554E97EC24C8DBBC00E065F7 /* CityTableViewCell.swift in Sources */,
 				554E97ED24C8DBBC00E065F7 /* TableViewController.swift in Sources */,
+				558067C224E208D600D8FC24 /* ModelController.swift in Sources */,
 				554E97BF24C8D97200E065F7 /* hw2.xcdatamodeld in Sources */,
 				554E97EB24C8DBBC00E065F7 /* DetailViewController.swift in Sources */,
 				554E97B524C8D97200E065F7 /* AppDelegate.swift in Sources */,
