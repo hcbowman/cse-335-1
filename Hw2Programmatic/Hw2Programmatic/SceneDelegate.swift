@@ -9,8 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    // FIX: Initialize app’s data structures
-    let modelController = ModelController()
+    // FIX: Documentation says to Initialize app’s data structures on start, but here?
+    let persistenceManager = PersistenceManager()
     
     var window: UIWindow?
 
@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let rootViewController = ViewController(modelController: modelController)
+        let rootViewController = ViewController(coreDataPersistenceManager: persistenceManager)
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
@@ -64,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        modelController.save()
+        persistenceManager.save()
         
     }
 

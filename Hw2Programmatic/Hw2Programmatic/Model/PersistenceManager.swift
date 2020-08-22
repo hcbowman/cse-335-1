@@ -7,7 +7,7 @@
 
 import CoreData
 
-public class ModelController {
+public class PersistenceManager {
     
     public typealias VoidCompletion = () -> ()
     
@@ -44,7 +44,7 @@ public class ModelController {
 }
 
 // MARK: - Add
-extension ModelController {
+extension PersistenceManager {
     
     public func add<M: NSManagedObject>(_ type: M.Type) -> M? {
         
@@ -59,7 +59,7 @@ extension ModelController {
 
 
 // MARK: - Fetch
-extension ModelController {
+extension PersistenceManager {
     
     public typealias TotalCompletion = ((_ count: Int) -> ())
     public typealias FetchCompletion<M> = ((_ fetched: [M]) -> ())
@@ -134,7 +134,7 @@ extension ModelController {
 }
 
 // MARK: - Save
-extension ModelController {
+extension PersistenceManager {
     
     public func save(_ completion: VoidCompletion?=nil) {
         
@@ -153,7 +153,7 @@ extension ModelController {
 }
 
 // MARK: - Delete
-extension ModelController {
+extension PersistenceManager {
     
     public func delete(by objectID: NSManagedObjectID, _ completion: VoidCompletion?=nil) {
         

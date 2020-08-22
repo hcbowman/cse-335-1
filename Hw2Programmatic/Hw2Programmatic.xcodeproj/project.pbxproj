@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		551ED1F324EB3BD3008E9197 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */; };
+		553C344724F0F3ED00DC417C /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */; };
 		5580680F24E2234200D8FC24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580680E24E2234200D8FC24 /* AppDelegate.swift */; };
 		5580681124E2234200D8FC24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580681024E2234200D8FC24 /* SceneDelegate.swift */; };
 		5580681324E2234200D8FC24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580681224E2234200D8FC24 /* ViewController.swift */; };
@@ -15,7 +16,7 @@
 		5580681B24E2234500D8FC24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5580681A24E2234500D8FC24 /* Assets.xcassets */; };
 		5580682924E2234500D8FC24 /* Hw2ProgrammaticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580682824E2234500D8FC24 /* Hw2ProgrammaticTests.swift */; };
 		5580683424E2234500D8FC24 /* Hw2ProgrammaticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580683324E2234500D8FC24 /* Hw2ProgrammaticUITests.swift */; };
-		5580684224E2516300D8FC24 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580684124E2516200D8FC24 /* ModelController.swift */; };
+		5580684224E2516300D8FC24 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580684124E2516200D8FC24 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5580680B24E2234200D8FC24 /* Hw2Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hw2Programmatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5580680E24E2234200D8FC24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5580681024E2234200D8FC24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		5580682F24E2234500D8FC24 /* Hw2ProgrammaticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hw2ProgrammaticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5580683324E2234500D8FC24 /* Hw2ProgrammaticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hw2ProgrammaticUITests.swift; sourceTree = "<group>"; };
 		5580683524E2234500D8FC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5580684124E2516200D8FC24 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelController.swift; path = ../../hw2/hw2/Model/ModelController.swift; sourceTree = "<group>"; };
+		5580684124E2516200D8FC24 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553C344124F0F32F00DC417C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */,
+				5580684124E2516200D8FC24 /* PersistenceManager.swift */,
+				5580681724E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		553C344224F0F35600DC417C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				553C344324F0F36100DC417C /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		553C344324F0F36100DC417C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5580681224E2234200D8FC24 /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		553C344424F0F3B600DC417C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5580680224E2234200D8FC24 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +136,14 @@
 		5580680D24E2234200D8FC24 /* Hw2Programmatic */ = {
 			isa = PBXGroup;
 			children = (
-				5580684124E2516200D8FC24 /* ModelController.swift */,
+				553C344424F0F3B600DC417C /* ViewModels */,
+				553C344224F0F35600DC417C /* Views */,
+				553C344124F0F32F00DC417C /* Model */,
 				5580680E24E2234200D8FC24 /* AppDelegate.swift */,
 				5580681024E2234200D8FC24 /* SceneDelegate.swift */,
-				5580681224E2234200D8FC24 /* ViewController.swift */,
 				5580681A24E2234500D8FC24 /* Assets.xcassets */,
 				5580681F24E2234500D8FC24 /* Info.plist */,
 				551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */,
-				5580681724E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld */,
 			);
 			path = Hw2Programmatic;
 			sourceTree = "<group>";
@@ -260,8 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553C344724F0F3ED00DC417C /* City+CoreDataClass.swift in Sources */,
 				5580681324E2234200D8FC24 /* ViewController.swift in Sources */,
-				5580684224E2516300D8FC24 /* ModelController.swift in Sources */,
+				5580684224E2516300D8FC24 /* PersistenceManager.swift in Sources */,
 				5580680F24E2234200D8FC24 /* AppDelegate.swift in Sources */,
 				5580681124E2234200D8FC24 /* SceneDelegate.swift in Sources */,
 				5580681924E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld in Sources */,
