@@ -40,23 +40,6 @@ class ViewController: UIViewController {
 
 }
 
-// MARK: - ViewModel
-class CityViewModel {
-    
-    private let persistenceManager: PersistenceManager
-    
-    init(coreDataPersistenceManager persistenceManager: PersistenceManager) {
-        self.persistenceManager = persistenceManager
-    }
-    
-    func rows() -> Int {
-        return persistenceManager.total(City.self)
-    }
-    
-}
-
-
-
 // MARK: - UITableView
 extension ViewController {
     

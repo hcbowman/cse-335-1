@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		551ED1F324EB3BD3008E9197 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */; };
 		553C344724F0F3ED00DC417C /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */; };
+		554B9F3624F1EFDC005D3854 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9F3524F1EFDC005D3854 /* SwiftyJSON.swift */; };
+		554B9F3824F1F226005D3854 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9F3724F1F226005D3854 /* CityViewModel.swift */; };
+		554B9F3A24F2C78B005D3854 /* City.json in Resources */ = {isa = PBXBuildFile; fileRef = 554B9F3924F2C78B005D3854 /* City.json */; };
 		5580680F24E2234200D8FC24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580680E24E2234200D8FC24 /* AppDelegate.swift */; };
 		5580681124E2234200D8FC24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580681024E2234200D8FC24 /* SceneDelegate.swift */; };
 		5580681324E2234200D8FC24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580681224E2234200D8FC24 /* ViewController.swift */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		554B9F3524F1EFDC005D3854 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		554B9F3724F1F226005D3854 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		554B9F3924F2C78B005D3854 /* City.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = City.json; sourceTree = "<group>"; };
 		5580680B24E2234200D8FC24 /* Hw2Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hw2Programmatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5580680E24E2234200D8FC24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5580681024E2234200D8FC24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 				553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */,
 				5580684124E2516200D8FC24 /* PersistenceManager.swift */,
 				5580681724E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld */,
+				554B9F3924F2C78B005D3854 /* City.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,8 +116,17 @@
 		553C344424F0F3B600DC417C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				554B9F3724F1F226005D3854 /* CityViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		554B9F3424F1EFBB005D3854 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				554B9F3524F1EFDC005D3854 /* SwiftyJSON.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		5580680224E2234200D8FC24 = {
@@ -136,6 +152,7 @@
 		5580680D24E2234200D8FC24 /* Hw2Programmatic */ = {
 			isa = PBXGroup;
 			children = (
+				554B9F3424F1EFBB005D3854 /* Util */,
 				553C344424F0F3B600DC417C /* ViewModels */,
 				553C344224F0F35600DC417C /* Views */,
 				553C344124F0F32F00DC417C /* Model */,
@@ -270,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				551ED1F324EB3BD3008E9197 /* Launch Screen.storyboard in Resources */,
+				554B9F3A24F2C78B005D3854 /* City.json in Resources */,
 				5580681B24E2234500D8FC24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,8 +316,10 @@
 				553C344724F0F3ED00DC417C /* City+CoreDataClass.swift in Sources */,
 				5580681324E2234200D8FC24 /* ViewController.swift in Sources */,
 				5580684224E2516300D8FC24 /* PersistenceManager.swift in Sources */,
+				554B9F3824F1F226005D3854 /* CityViewModel.swift in Sources */,
 				5580680F24E2234200D8FC24 /* AppDelegate.swift in Sources */,
 				5580681124E2234200D8FC24 /* SceneDelegate.swift in Sources */,
+				554B9F3624F1EFDC005D3854 /* SwiftyJSON.swift in Sources */,
 				5580681924E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
