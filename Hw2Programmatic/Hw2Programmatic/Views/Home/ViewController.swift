@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let cityCellID = "cityCell"
     
     init(coreDataPersistenceManager persistenceManager: PersistenceManager) {
+        
         self.cityViewModel = CityViewModel(coreDataPersistenceManager: persistenceManager)
         self.cityTableView = UITableView()
         
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cityTableView.dataSource = self
         
         setupTableView()
         
@@ -41,11 +41,15 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableView
+// TODO: Add to collection view, add refreshControl
 extension ViewController {
     
     func setupTableView() {
         self.view.addSubview(cityTableView)
         
+        cityTableView.dataSource = self
+        
+        // Sets the constraints of the UITableView, which will later be changed
         cityTableView.translatesAutoresizingMaskIntoConstraints = false
         cityTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         cityTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -57,6 +61,8 @@ extension ViewController {
         //let dropCoordinator = UITableViewDropCoordinator.dr
         
         cityTableView.register(UITableViewCell.self, forCellReuseIdentifier: cityCellID)
+        
+        
         
         
         let refreshControl = UIRefreshControl()
@@ -78,9 +84,10 @@ extension ViewController {
 
 extension ViewController: UITableViewDataSource {
     
+    // FIX: Remove hardcode
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return cityViewModel.rows()
-        return 3
+        return cityViewModel.rowsTotal()
+        //return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

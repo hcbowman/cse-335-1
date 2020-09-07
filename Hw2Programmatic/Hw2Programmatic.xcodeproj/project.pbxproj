@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		551ED1F324EB3BD3008E9197 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */; };
 		553C344724F0F3ED00DC417C /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */; };
+		55443ED324FC5D6A009B732D /* sub-est2019_all.csv in Resources */ = {isa = PBXBuildFile; fileRef = 55443ED224FC5D6A009B732D /* sub-est2019_all.csv */; };
 		554B9F3624F1EFDC005D3854 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9F3524F1EFDC005D3854 /* SwiftyJSON.swift */; };
 		554B9F3824F1F226005D3854 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9F3724F1F226005D3854 /* CityViewModel.swift */; };
 		554B9F3A24F2C78B005D3854 /* City.json in Resources */ = {isa = PBXBuildFile; fileRef = 554B9F3924F2C78B005D3854 /* City.json */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		551ED1F224EB3BD3008E9197 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55443ED224FC5D6A009B732D /* sub-est2019_all.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sub-est2019_all.csv"; sourceTree = "<group>"; };
 		554B9F3524F1EFDC005D3854 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		554B9F3724F1F226005D3854 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		554B9F3924F2C78B005D3854 /* City.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = City.json; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		553C344124F0F32F00DC417C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55443ED224FC5D6A009B732D /* sub-est2019_all.csv */,
 				553C344524F0F3ED00DC417C /* City+CoreDataClass.swift */,
 				5580684124E2516200D8FC24 /* PersistenceManager.swift */,
 				5580681724E2234200D8FC24 /* Hw2Programmatic.xcdatamodeld */,
@@ -286,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55443ED324FC5D6A009B732D /* sub-est2019_all.csv in Resources */,
 				551ED1F324EB3BD3008E9197 /* Launch Screen.storyboard in Resources */,
 				554B9F3A24F2C78B005D3854 /* City.json in Resources */,
 				5580681B24E2234500D8FC24 /* Assets.xcassets in Resources */,

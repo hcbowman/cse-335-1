@@ -44,6 +44,7 @@ public class PersistenceManager {
 }
 
 // MARK: - Add
+// TODO: Maybe change this to use init(context:)
 extension PersistenceManager {
     
     public func add<M: NSManagedObject>(_ type: M.Type) -> M? {
@@ -55,6 +56,12 @@ extension PersistenceManager {
         }
         return modelObject
     }
+}
+
+// MARK: - Batch Insert
+extension PersistenceManager {
+    
+    let batchInsert = self.
 }
 
 
